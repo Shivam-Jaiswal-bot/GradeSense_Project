@@ -12,6 +12,35 @@ points, and moving an annotation never re-grades anything.
 
 ---
 
+## The interface
+
+Upload the papers on the left; the marks, the evidence and the annotated page
+fill the workspace on the right.
+
+![The grading workspace before a run: the upload panel, the onboarding state and recent grading sessions](docs/screenshots/01-workspace.png)
+
+Grading is a single request, and the panel reports how far through it is.
+
+![Grading in progress, with the four stages of a run and a progress bar](docs/screenshots/02-grading.png)
+
+When it finishes, the answer paper and its annotation layer sit beside the mark
+breakdown. Annotations can be dragged, resized, retyped or deleted, and
+Alt-clicking a page adds one of your own — none of which touches the marks.
+
+![A graded paper: the annotated answer sheet beside the score, the review flags and the mark breakdown](docs/screenshots/03-results.png)
+
+Every rubric point carries its status, its confidence, the student's own words
+that earned or lost the mark, and what the answer should have said instead.
+
+![The mark breakdown: evidence quotes, feedback and corrections for each criterion](docs/screenshots/04-evidence.png)
+
+The layout collapses to a single column on small screens, with the grading panel
+stacked above the workspace and collapsible out of the way.
+
+<img src="docs/screenshots/05-mobile.png" width="380" alt="GradeSense on a phone, with the grading panel stacked above the workspace">
+
+---
+
 ## Setup
 
 Requires **Node 20.10+**.
@@ -97,6 +126,7 @@ and every comment.
 | `fixtures/student-answer-{correct,incorrect,ocr,blank}.pdf` | variants used by the tests |
 | `docs/ARCHITECTURE.md` | how it works and why it is built this way |
 | `docs/TEST-OUTPUT.md` | the test run output |
+| `docs/screenshots/` | the screenshots used above |
 
 ### The sample answer
 
