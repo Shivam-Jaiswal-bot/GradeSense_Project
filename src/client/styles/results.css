@@ -1,0 +1,489 @@
+/**
+ * The marks: score hero, question-by-question breakdown, the evidence that
+ * justifies each mark, and the annotation inspector.
+ */
+
+/* -------------------------------- hero ---------------------------------- */
+
+.score-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ring {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  flex: none;
+}
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.ring circle {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+.ring-track {
+  stroke: var(--surface-3);
+}
+.ring-value {
+  stroke: var(--accent-hi);
+  transition: stroke-dashoffset 0.9s var(--ease);
+}
+.ring.tone-ok .ring-value {
+  stroke: var(--ok);
+}
+.ring.tone-mid .ring-value {
+  stroke: var(--warn);
+}
+.ring.tone-low .ring-value {
+  stroke: var(--err);
+}
+
+.ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+.ring-pct {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.ring-pct i {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--text-3);
+  margin-left: 1px;
+}
+.ring-marks {
+  font-size: 11px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-side {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.hero-side h2 {
+  font-size: 15px;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.hero-note {
+  color: var(--text-3);
+  font-size: 11.5px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------- evidence headline -------------------------- */
+
+/* The product's whole claim: no mark without the words behind it. */
+.claim {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 18px 4px;
+  margin-top: 16px;
+  padding: 11px 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-line);
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.13), rgba(99, 102, 241, 0.05));
+  color: var(--text-2);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.claim svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--accent-hi);
+}
+.claim strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* -------------------------------- review -------------------------------- */
+
+.review {
+  margin: 16px 18px 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(217, 158, 74, 0.36);
+  background: var(--warn-soft);
+}
+.review-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--warn);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.review ul {
+  margin: 8px 0 0;
+  padding-left: 17px;
+  color: var(--text-2);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.review li + li {
+  margin-top: 3px;
+}
+
+/* ------------------------------- questions ------------------------------ */
+
+.breakdown {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.breakdown-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.breakdown-head span {
+  margin-left: auto;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+  color: var(--text-3);
+}
+
+.question {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.014);
+  overflow: hidden;
+}
+
+.question-head {
+  padding: 12px 14px 11px;
+}
+.question-title {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+.question-title h3 {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.question-subject {
+  color: var(--text-3);
+  font-size: 11.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.question-marks {
+  margin-left: auto;
+  flex: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.question-marks span {
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+.meter {
+  height: 3px;
+  margin-top: 9px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent-hi);
+  transition: width 0.8s var(--ease);
+}
+.meter-fill.tone-ok {
+  background: var(--ok);
+}
+.meter-fill.tone-mid {
+  background: var(--warn);
+}
+.meter-fill.tone-low {
+  background: var(--err);
+}
+
+.question-summary {
+  margin-top: 9px;
+  color: var(--text-2);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+/* ------------------------------- criteria ------------------------------- */
+
+.criteria {
+  display: flex;
+  flex-direction: column;
+}
+
+.criterion {
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+.criterion::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  bottom: 0;
+  width: 2px;
+  background: var(--line-2);
+}
+.criterion.correct::before {
+  background: var(--ok);
+}
+.criterion.partial::before {
+  background: var(--warn);
+}
+.criterion.incorrect::before,
+.criterion.missing::before {
+  background: var(--err);
+}
+
+.criterion-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.status.correct {
+  color: var(--ok);
+  background: var(--ok-soft);
+  border-color: rgba(53, 196, 143, 0.3);
+}
+.status.partial {
+  color: var(--warn);
+  background: var(--warn-soft);
+  border-color: rgba(217, 158, 74, 0.32);
+}
+.status.incorrect,
+.status.missing {
+  color: var(--err);
+  background: var(--err-soft);
+  border-color: rgba(229, 114, 107, 0.32);
+}
+
+.criterion-marks {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.criterion-marks span {
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+.conf {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+.conf-track {
+  width: 26px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.conf-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--text-3);
+}
+.conf.high .conf-fill {
+  background: var(--ok);
+}
+.conf.medium .conf-fill {
+  background: var(--warn);
+}
+.conf.low .conf-fill {
+  background: var(--err);
+}
+
+.criterion-desc {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.evidence {
+  margin-top: 10px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--line);
+  background: #0d0f14;
+  overflow: hidden;
+}
+.evidence-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border-bottom: 1px solid var(--line);
+  color: var(--accent-hi);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.evidence-quote {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 9px 11px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+.evidence-quote + .evidence-quote {
+  border-top: 1px solid var(--line);
+}
+.evidence-quote q {
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+.evidence-page {
+  flex: none;
+  margin-top: 1px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  border: 1px solid var(--line-2);
+  color: var(--text-3);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.criterion-line {
+  display: flex;
+  gap: 7px;
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.criterion-line b {
+  flex: none;
+  font-weight: 600;
+  color: var(--text-3);
+}
+.criterion-line.correction b {
+  color: var(--warn);
+}
+
+.criterion-adjustments {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  color: var(--warn);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.adjustments {
+  margin: 0 18px 18px;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.014);
+  font-size: 12px;
+  color: var(--text-2);
+}
+.adjustments summary {
+  cursor: pointer;
+  color: var(--text-2);
+  list-style: none;
+}
+.adjustments summary::-webkit-details-marker {
+  display: none;
+}
+.adjustments summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 7px;
+  color: var(--text-3);
+  transition: transform 0.18s var(--ease);
+}
+.adjustments[open] summary::before {
+  transform: rotate(90deg);
+}
+.adjustments ul {
+  margin: 8px 0 0;
+  padding-left: 24px;
+  color: var(--text-3);
+  line-height: 1.55;
+}
+
+@media (max-width: 560px) {
+  .score-hero {
+    padding: 15px;
+    gap: 14px;
+  }
+  .ring {
+    width: 72px;
+    height: 72px;
+  }
+  .breakdown {
+    padding: 14px;
+  }
+  .claim,
+  .review {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+}

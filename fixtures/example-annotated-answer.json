@@ -1,0 +1,787 @@
+{
+  "run": {
+    "id": "bc0f01af-763b-4604-b516-537be253864f",
+    "createdAt": "2026-09-01T03:06:35.792Z",
+    "studentDocumentId": "fixtures/student-answer.pdf",
+    "studentName": "Ananya Sharma",
+    "questionPaperId": null,
+    "modelAnswerId": null,
+    "maxMarks": 15,
+    "awardedMarks": 6.5,
+    "questions": [
+      {
+        "questionId": "q1",
+        "number": 1,
+        "subject": "Science",
+        "maxMarks": 5,
+        "awardedMarks": 3,
+        "criteria": [
+          {
+            "criterionId": "q1.c1",
+            "description": "Correctly represents the main circuit with battery, switch, bulb and resistor connected in a closed series path",
+            "maxMarks": 1,
+            "awardedMarks": 1,
+            "status": "correct",
+            "evidence": [
+              {
+                "quote": "In my circuit the battery, the switch, the resistor, the bulb and the ammeter are all joined one after the other in\nseries.",
+                "offset": 556,
+                "page": 1,
+                "rects": [
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 602.765,
+                    "width": 485.69100000000003,
+                    "height": 14
+                  },
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 586.265,
+                    "width": 33.35439814814814,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer covers this rubric point.",
+            "correction": "",
+            "confidence": 0.62,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q1.c2",
+            "description": "Correct placement of ammeter in series and voltmeter in parallel across the bulb",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "incorrect",
+            "evidence": [
+              {
+                "quote": "The voltmeter is also connected in series, just after the bulb, so that it can measure the voltage of the\nbulb.",
+                "offset": 790,
+                "page": 1,
+                "rects": [
+                  {
+                    "page": 1,
+                    "x": 92.05313157894736,
+                    "y": 569.765,
+                    "width": 441.11986842105256,
+                    "height": 14
+                  },
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 553.265,
+                    "width": 25.308,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer says the opposite of the marking scheme about \"voltmeter\" (series/parallel).",
+            "correction": "A full-credit diagram should visually represent something equivalent to: • Battery • Switch • Resistor • Bulb • Ammeter in series • Voltmeter in parallel across the bulb • Connecting wires forming a complete circuit • Appropriate component labels • Conventional current direction",
+            "confidence": 0.7,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q1.c3",
+            "description": "Correct explanation of current flow and the function of the main components",
+            "maxMarks": 1,
+            "awardedMarks": 1,
+            "status": "correct",
+            "evidence": [
+              {
+                "quote": "A simple electric circut is a closed path which allows the current to flow through it.",
+                "offset": 130,
+                "page": 1,
+                "rects": [
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 675.765,
+                    "width": 370.12401785714286,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer covers this rubric point.",
+            "correction": "",
+            "confidence": 0.62,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q1.c4",
+            "description": "Correctly explains the relationship between resistance and current, including the relevant principle/Ohm's law",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "incorrect",
+            "evidence": [
+              {
+                "quote": "If we increase the resistence then the\ncurrent also increases, because a bigger resistor pushes more current through the wire.",
+                "offset": 1133,
+                "page": 1,
+                "rects": [
+                  {
+                    "page": 1,
+                    "x": 340.2508076923078,
+                    "y": 489.765,
+                    "width": 167.52319230769237,
+                    "height": 14
+                  },
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 473.265,
+                    "width": 378.76427777777786,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer says the opposite of the marking scheme about \"current\" (increase/decrease).",
+            "correction": "The amount of current flowing through the circuit depends on both the potential difference and the resistance.",
+            "confidence": 0.7,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q1.c5",
+            "description": "Clear, logically structured explanation with appropriate labels and current direction in the diagram",
+            "maxMarks": 1,
+            "awardedMarks": 1,
+            "status": "correct",
+            "evidence": [
+              {
+                "quote": "A simple electric circut is a closed path which allows the current to flow through it.",
+                "offset": 130,
+                "page": 1,
+                "rects": [
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 675.765,
+                    "width": 370.12401785714286,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer covers this rubric point.",
+            "correction": "",
+            "confidence": 0.62,
+            "adjustments": []
+          }
+        ],
+        "issues": [
+          {
+            "id": "q1.i1",
+            "questionId": "q1",
+            "criterionId": "q1.c2",
+            "type": "wrong_reasoning",
+            "quote": "The voltmeter is also connected in series, just after the bulb, so that it can measure the voltage of the\nbulb.",
+            "correction": "A full-credit diagram should visually represent something equivalent to: • Battery • Switch • Resistor • Bulb • Ammeter in series • Voltmeter in parallel across the bulb • Connecting wires forming a complete circuit • Appropriate component labels • Conventional current direction",
+            "comment": "This reverses the series/parallel relationship for \"voltmeter\".",
+            "marksLost": 1,
+            "confidence": 0.7
+          },
+          {
+            "id": "q1.i2",
+            "questionId": "q1",
+            "criterionId": "q1.c4",
+            "type": "wrong_reasoning",
+            "quote": "If we increase the resistence then the\ncurrent also increases, because a bigger resistor pushes more current through the wire.",
+            "correction": "The amount of current flowing through the circuit depends on both the potential difference and the resistance.",
+            "comment": "This reverses the increase/decrease relationship for \"current\".",
+            "marksLost": 1,
+            "confidence": 0.7
+          }
+        ],
+        "summary": "Lexical review scored 3 of 5. 2 point(s) need attention. This is an offline heuristic reading and should be checked.",
+        "confidence": 0.6519999999999999,
+        "answerRange": {
+          "start": 110,
+          "end": 1498
+        }
+      },
+      {
+        "questionId": "q2",
+        "number": 2,
+        "subject": "English",
+        "maxMarks": 5,
+        "awardedMarks": 1.5,
+        "criteria": [
+          {
+            "criterionId": "q2.c1",
+            "description": "Presents a clear position on whether/how technology affects learning",
+            "maxMarks": 1,
+            "awardedMarks": 0.5,
+            "status": "partial",
+            "evidence": [
+              {
+                "quote": "In todays world technology have made information very easy to get.",
+                "offset": 1518,
+                "page": 1,
+                "rects": [
+                  {
+                    "page": 1,
+                    "x": 54.5,
+                    "y": 159.14,
+                    "width": 303.09423529411754,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer touches this rubric point but does not develop it.",
+            "correction": "Technology has significantly changed the way students learn because information that was once difficult to access is now available within seconds.",
+            "confidence": 0.45,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q2.c2",
+            "description": "Provides relevant and logically developed arguments supporting the position",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "missing",
+            "evidence": [],
+            "feedback": "No wording matching this rubric point was found. The offline grader matches vocabulary, so a point made in very different words can be missed here - this zero needs checking.",
+            "correction": "If a student immediately looks up the solution to every difficult question, they may complete their work but fail to develop their own reasoning and problem-solving abilities.",
+            "confidence": 0.3,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q2.c3",
+            "description": "Recognises and meaningfully addresses an opposing viewpoint or limitation",
+            "maxMarks": 1,
+            "awardedMarks": 0.5,
+            "status": "partial",
+            "evidence": [],
+            "feedback": "The offline grader cannot judge this rubric point: it asks about the quality of the reasoning, not about content that can be matched by vocabulary. Provisional half mark pending review.",
+            "correction": "",
+            "confidence": 0.2,
+            "adjustments": [
+              "q2.c3: 0.5 mark(s) awarded with no quote we could verify; confidence reduced"
+            ]
+          },
+          {
+            "criterionId": "q2.c4",
+            "description": "Uses relevant examples and demonstrates reasoning rather than merely making unsupported claims",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "missing",
+            "evidence": [],
+            "feedback": "No wording matching this rubric point was found. The offline grader matches vocabulary, so a point made in very different words can be missed here - this zero needs checking.",
+            "correction": "For example, a student struggling with a difficult scientific concept can watch several different explanations until they find one that they understand.",
+            "confidence": 0.3,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q2.c5",
+            "description": "Provides a coherent conclusion that follows from the discussion, with clear overall communication",
+            "maxMarks": 1,
+            "awardedMarks": 0.5,
+            "status": "partial",
+            "evidence": [],
+            "feedback": "The offline grader cannot judge this rubric point: it asks about the quality of the reasoning, not about content that can be matched by vocabulary. Provisional half mark pending review.",
+            "correction": "",
+            "confidence": 0.2,
+            "adjustments": [
+              "q2.c5: 0.5 mark(s) awarded with no quote we could verify; confidence reduced"
+            ]
+          }
+        ],
+        "issues": [
+          {
+            "id": "q2.i1",
+            "questionId": "q2",
+            "criterionId": "q2.c1",
+            "type": "missing_point",
+            "quote": "In todays world technology have made information very easy to get.",
+            "correction": "Technology has significantly changed the way students learn because information that was once difficult to access is now available within seconds.",
+            "comment": "Develop this point further to earn the full mark.",
+            "marksLost": 0.5,
+            "confidence": 0.45
+          },
+          {
+            "id": "q2.i2",
+            "questionId": "q2",
+            "criterionId": "q2.c2",
+            "type": "missing_point",
+            "quote": "",
+            "correction": "If a student immediately looks up the solution to every difficult question, they may complete their work but fail to develop their own reasoning and problem-solving abilities.",
+            "comment": "No evidence found for: Provides relevant and logically developed arguments supporting the position",
+            "marksLost": 1,
+            "confidence": 0.3
+          },
+          {
+            "id": "q2.i3",
+            "questionId": "q2",
+            "criterionId": "q2.c3",
+            "type": "missing_point",
+            "quote": "",
+            "correction": "",
+            "comment": "Needs a human examiner: Recognises and meaningfully addresses an opposing viewpoint or limitation",
+            "marksLost": 0.5,
+            "confidence": 0.2
+          },
+          {
+            "id": "q2.i4",
+            "questionId": "q2",
+            "criterionId": "q2.c4",
+            "type": "missing_point",
+            "quote": "",
+            "correction": "For example, a student struggling with a difficult scientific concept can watch several different explanations until they find one that they understand.",
+            "comment": "No evidence found for: Uses relevant examples and demonstrates reasoning rather than merely making unsupported claims",
+            "marksLost": 1,
+            "confidence": 0.3
+          },
+          {
+            "id": "q2.i5",
+            "questionId": "q2",
+            "criterionId": "q2.c5",
+            "type": "missing_point",
+            "quote": "",
+            "correction": "",
+            "comment": "Needs a human examiner: Provides a coherent conclusion that follows from the discussion, with clear overall communication",
+            "marksLost": 0.5,
+            "confidence": 0.2
+          }
+        ],
+        "summary": "Lexical review scored 1.5 of 5. 5 point(s) need attention. This is an offline heuristic reading and should be checked.",
+        "confidence": 0.29,
+        "answerRange": {
+          "start": 1498,
+          "end": 2518
+        }
+      },
+      {
+        "questionId": "q3",
+        "number": 3,
+        "subject": "Economics",
+        "maxMarks": 5,
+        "awardedMarks": 2,
+        "criteria": [
+          {
+            "criterionId": "q3.c1",
+            "description": "Correctly plots and labels the demand and supply curves, with appropriate axes and direction",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "incorrect",
+            "evidence": [
+              {
+                "quote": "I have\ndrawn the graph below by taking price on the horizontal axis and quantity on the vertical axis.",
+                "offset": 2636,
+                "page": 2,
+                "rects": [
+                  {
+                    "page": 2,
+                    "x": 493.5578823529412,
+                    "y": 613.265,
+                    "width": 30.44111764705883,
+                    "height": 14
+                  },
+                  {
+                    "page": 2,
+                    "x": 54.5,
+                    "y": 596.765,
+                    "width": 416.96299999999997,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer says the opposite of the marking scheme about \"price\" (horizontal/vertical).",
+            "correction": "The demand and supply data can be represented on a graph with quantity on the horizontal axis and price on the vertical axis .",
+            "confidence": 0.7,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q3.c2",
+            "description": "Correctly identifies the equilibrium at ₹30 and 60 units and explains why it is equilibrium",
+            "maxMarks": 1,
+            "awardedMarks": 1,
+            "status": "correct",
+            "evidence": [
+              {
+                "quote": "Equilibrium (Rs. 30, 60 units)\n60",
+                "offset": 3802,
+                "page": 2,
+                "rects": [
+                  {
+                    "page": 2,
+                    "x": 247.5,
+                    "y": 315.265,
+                    "width": 105.0085,
+                    "height": 11.5
+                  },
+                  {
+                    "page": 2,
+                    "x": 96.5,
+                    "y": 298.265,
+                    "width": 11,
+                    "height": 11
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer covers this rubric point.",
+            "correction": "",
+            "confidence": 0.62,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q3.c3",
+            "description": "Correctly explains shortage below equilibrium and surplus above equilibrium",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "incorrect",
+            "evidence": [
+              {
+                "quote": "If the price in the market goes above the equilibrium price then there will be a shortage in the market,\nbecause the buyers will demand much more than what the sellers are ready to supply.",
+                "offset": 3162,
+                "page": 2,
+                "rects": [
+                  {
+                    "page": 2,
+                    "x": 54.5,
+                    "y": 500.265,
+                    "width": 449.63300000000004,
+                    "height": 14
+                  },
+                  {
+                    "page": 2,
+                    "x": 54.5,
+                    "y": 483.765,
+                    "width": 374.09610280373835,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer pairs \"above\" with \"shortage\"; the marking scheme pairs \"below\" with \"shortage\" and \"above\" with \"surplus\".",
+            "correction": "If the market price is below the equilibrium price , quantity demanded is greater than quantity supplied.",
+            "confidence": 0.7,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q3.c4",
+            "description": "Correctly explains that increased production costs shift the supply curve left/upward",
+            "maxMarks": 1,
+            "awardedMarks": 1,
+            "status": "correct",
+            "evidence": [
+              {
+                "quote": "If the cost of production increases then the producers will not be able to supply the same quantity at the old\nprice, so the supply curve shifts to the left.",
+                "offset": 3479,
+                "page": 2,
+                "rects": [
+                  {
+                    "page": 2,
+                    "x": 54.5,
+                    "y": 443.765,
+                    "width": 474.7129999999999,
+                    "height": 14
+                  },
+                  {
+                    "page": 2,
+                    "x": 54.5,
+                    "y": 427.265,
+                    "width": 196.96210810810808,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer covers this rubric point.",
+            "correction": "",
+            "confidence": 0.62,
+            "adjustments": []
+          },
+          {
+            "criterionId": "q3.c5",
+            "description": "Correctly explains the resulting tendency toward a higher equilibrium price and lower equilibrium quantity, with the change represented appropriately on the graph",
+            "maxMarks": 1,
+            "awardedMarks": 0,
+            "status": "incorrect",
+            "evidence": [
+              {
+                "quote": "The new equilibrium will then be at a higher price and also at a\nhigher quantity, because when the price has gone up the sellers will sell more.",
+                "offset": 3637,
+                "page": 2,
+                "rects": [
+                  {
+                    "page": 2,
+                    "x": 252.67867567567566,
+                    "y": 427.265,
+                    "width": 272.8603243243243,
+                    "height": 14
+                  },
+                  {
+                    "page": 2,
+                    "x": 54.5,
+                    "y": 410.765,
+                    "width": 346.0789999999999,
+                    "height": 14
+                  }
+                ]
+              }
+            ],
+            "feedback": "The answer says the opposite of the marking scheme about \"quantity\" (higher/lower).",
+            "correction": "The new equilibrium would generally occur at a higher price and lower quantity , assuming demand remains unchanged.",
+            "confidence": 0.7,
+            "adjustments": []
+          }
+        ],
+        "issues": [
+          {
+            "id": "q3.i1",
+            "questionId": "q3",
+            "criterionId": "q3.c1",
+            "type": "wrong_reasoning",
+            "quote": "I have\ndrawn the graph below by taking price on the horizontal axis and quantity on the vertical axis.",
+            "correction": "The demand and supply data can be represented on a graph with quantity on the horizontal axis and price on the vertical axis .",
+            "comment": "This reverses the horizontal/vertical relationship for \"price\".",
+            "marksLost": 1,
+            "confidence": 0.7
+          },
+          {
+            "id": "q3.i2",
+            "questionId": "q3",
+            "criterionId": "q3.c3",
+            "type": "wrong_reasoning",
+            "quote": "If the price in the market goes above the equilibrium price then there will be a shortage in the market,\nbecause the buyers will demand much more than what the sellers are ready to supply.",
+            "correction": "If the market price is below the equilibrium price , quantity demanded is greater than quantity supplied.",
+            "comment": "This pairs \"above\" with \"shortage\" - the marking scheme pairs \"below\" with \"shortage\" and \"above\" with \"surplus\".",
+            "marksLost": 1,
+            "confidence": 0.7
+          },
+          {
+            "id": "q3.i3",
+            "questionId": "q3",
+            "criterionId": "q3.c5",
+            "type": "wrong_reasoning",
+            "quote": "The new equilibrium will then be at a higher price and also at a\nhigher quantity, because when the price has gone up the sellers will sell more.",
+            "correction": "The new equilibrium would generally occur at a higher price and lower quantity , assuming demand remains unchanged.",
+            "comment": "This reverses the higher/lower relationship for \"quantity\".",
+            "marksLost": 1,
+            "confidence": 0.7
+          }
+        ],
+        "summary": "Lexical review scored 2 of 5. 3 point(s) need attention. This is an offline heuristic reading and should be checked.",
+        "confidence": 0.6679999999999999,
+        "answerRange": {
+          "start": 2518,
+          "end": 3910
+        }
+      }
+    ],
+    "confidence": 0.5366666666666667,
+    "needsHumanReview": true,
+    "reviewReasons": [
+      "Overall confidence is 54%, below the 55% threshold for an unreviewed result.",
+      "2 rubric point(s) were awarded marks with weak support: q2.c3, q2.c5.",
+      "2 rubric point(s) were scored zero on weak evidence: q2.c2, q2.c4."
+    ],
+    "provider": "mock",
+    "model": "lexical-rubric-matcher-v1",
+    "adjustments": [
+      "q2.c3: 0.5 mark(s) awarded with no quote we could verify; confidence reduced",
+      "q2.c5: 0.5 mark(s) awarded with no quote we could verify; confidence reduced"
+    ],
+    "degraded": false,
+    "durationMs": 37
+  },
+  "annotations": [
+    {
+      "id": "example-1",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q1.i1",
+      "questionId": "q1",
+      "style": "box",
+      "severity": "error",
+      "page": 1,
+      "x": 92.05313157894736,
+      "y": 569.765,
+      "width": 441.1198684210525,
+      "height": 14,
+      "text": "This reverses the series/parallel relationship for \"voltmeter\". Correct: A full-credit diagram should visually represent something equivalent to: • Battery • Switch • Resistor • Bulb • Ammeter in series • Voltmeter in parallel across the bulb • Connecting wires forming a complete circuit • Appropriate component labels • Conventional current direction",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": true,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-2",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q1.i2",
+      "questionId": "q1",
+      "style": "box",
+      "severity": "error",
+      "page": 1,
+      "x": 340.2508076923078,
+      "y": 489.765,
+      "width": 167.52319230769234,
+      "height": 14,
+      "text": "This reverses the increase/decrease relationship for \"current\". Correct: The amount of current flowing through the circuit depends on both the potential difference and the resistance.",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": true,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-3",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q2.i1",
+      "questionId": "q2",
+      "style": "note",
+      "severity": "warning",
+      "page": 1,
+      "x": 54.5,
+      "y": 159.14,
+      "width": 303.09423529411754,
+      "height": 14,
+      "text": "Develop this point further to earn the full mark. Correct: Technology has significantly changed the way students learn because information that was once difficult to access is now available within seconds.",
+      "marksLost": 0.5,
+      "edited": false,
+      "anchored": true,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-4",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q2.i2",
+      "questionId": "q2",
+      "style": "note",
+      "severity": "warning",
+      "page": 1,
+      "x": 429.28,
+      "y": 182.765,
+      "width": 150,
+      "height": 34,
+      "text": "No evidence found for: Provides relevant and logically developed arguments supporting the position Correct: If a student immediately looks up the solution to every difficult question, they may complete their work but fail to develop their own reasoning and problem-solving abilities.",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": false,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-5",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q2.i3",
+      "questionId": "q2",
+      "style": "note",
+      "severity": "warning",
+      "page": 1,
+      "x": 429.28,
+      "y": 140.765,
+      "width": 150,
+      "height": 34,
+      "text": "Needs a human examiner: Recognises and meaningfully addresses an opposing viewpoint or limitation",
+      "marksLost": 0.5,
+      "edited": false,
+      "anchored": false,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-6",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q2.i4",
+      "questionId": "q2",
+      "style": "note",
+      "severity": "warning",
+      "page": 1,
+      "x": 429.28,
+      "y": 98.76499999999999,
+      "width": 150,
+      "height": 34,
+      "text": "No evidence found for: Uses relevant examples and demonstrates reasoning rather than merely making unsupported claims Correct: For example, a student struggling with a difficult scientific concept can watch several different explanations until they find one that they understand.",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": false,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-7",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q2.i5",
+      "questionId": "q2",
+      "style": "note",
+      "severity": "warning",
+      "page": 1,
+      "x": 429.28,
+      "y": 56.764999999999986,
+      "width": 150,
+      "height": 34,
+      "text": "Needs a human examiner: Provides a coherent conclusion that follows from the discussion, with clear overall communication",
+      "marksLost": 0.5,
+      "edited": false,
+      "anchored": false,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-8",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q3.i1",
+      "questionId": "q3",
+      "style": "box",
+      "severity": "error",
+      "page": 2,
+      "x": 493.5578823529412,
+      "y": 613.265,
+      "width": 30.44111764705883,
+      "height": 14,
+      "text": "This reverses the horizontal/vertical relationship for \"price\". Correct: The demand and supply data can be represented on a graph with quantity on the horizontal axis and price on the vertical axis .",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": true,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-9",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q3.i2",
+      "questionId": "q3",
+      "style": "box",
+      "severity": "error",
+      "page": 2,
+      "x": 54.5,
+      "y": 500.265,
+      "width": 449.63300000000004,
+      "height": 14,
+      "text": "This pairs \"above\" with \"shortage\" - the marking scheme pairs \"below\" with \"shortage\" and \"above\" with \"surplus\". Correct: If the market price is below the equilibrium price , quantity demanded is greater than quantity supplied.",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": true,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    },
+    {
+      "id": "example-10",
+      "runId": "bc0f01af-763b-4604-b516-537be253864f",
+      "issueId": "q3.i3",
+      "questionId": "q3",
+      "style": "box",
+      "severity": "error",
+      "page": 2,
+      "x": 252.67867567567566,
+      "y": 427.265,
+      "width": 272.8603243243243,
+      "height": 14,
+      "text": "This reverses the higher/lower relationship for \"quantity\". Correct: The new equilibrium would generally occur at a higher price and lower quantity , assuming demand remains unchanged.",
+      "marksLost": 1,
+      "edited": false,
+      "anchored": true,
+      "createdAt": "2026-09-01T03:06:35.792Z",
+      "updatedAt": "2026-09-01T03:06:35.792Z"
+    }
+  ]
+}

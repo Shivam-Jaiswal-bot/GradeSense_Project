@@ -1,0 +1,456 @@
+/**
+ * The main workspace: onboarding empty state, grading progress, and the
+ * answer paper with its annotation layer.
+ *
+ * The .page / .annotation geometry is load-bearing - pdf.js sizes the canvas
+ * and the annotations are positioned against it, so only the chrome is styled
+ * here, never the box model of a page.
+ */
+
+.workspace {
+  min-width: 0;
+}
+
+/* ------------------------------ empty state ----------------------------- */
+
+.onboard {
+  padding: 52px 32px 44px;
+  text-align: center;
+  animation: rise 0.5s var(--ease) both;
+}
+
+.onboard-glyph {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 22px;
+  border-radius: 18px;
+  color: var(--accent-hi);
+  background: linear-gradient(160deg, rgba(99, 102, 241, 0.22), rgba(99, 102, 241, 0.06));
+  border: 1px solid var(--accent-line);
+  box-shadow: 0 18px 44px -22px rgba(99, 102, 241, 0.95);
+}
+.onboard-glyph::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 30px;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.onboard h2 {
+  font-size: 25px;
+  letter-spacing: -0.028em;
+}
+
+.onboard-lede {
+  max-width: 46ch;
+  margin: 11px auto 0;
+  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.62;
+}
+
+.onboard-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+  text-align: left;
+}
+
+.feature {
+  padding: 16px 16px 17px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.016);
+  transition:
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease),
+    transform 0.2s var(--ease);
+  animation: rise 0.5s var(--ease) both;
+}
+.feature:hover {
+  border-color: var(--line-2);
+  background: rgba(255, 255, 255, 0.035);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  margin-bottom: 11px;
+  border-radius: 8px;
+  color: var(--ok);
+  background: var(--ok-soft);
+  border: 1px solid rgba(53, 196, 143, 0.3);
+}
+
+.feature h3 {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.feature p {
+  margin-top: 6px;
+  color: var(--text-3);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.onboard-hint {
+  margin-top: 26px;
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+/* ---------------------------- grading progress -------------------------- */
+
+.grading {
+  padding: 46px 32px 44px;
+  text-align: center;
+  animation: rise 0.4s var(--ease) both;
+}
+
+.grading-orb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+.grading-orb::before,
+.grading-orb::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-top-color: var(--accent-hi);
+  animation: spin 1.5s linear infinite;
+}
+.grading-orb::after {
+  inset: -13px;
+  border-top-color: rgba(99, 102, 241, 0.34);
+  animation-duration: 2.6s;
+  animation-direction: reverse;
+}
+
+.grading h2 {
+  font-size: 19px;
+}
+.grading > p {
+  margin-top: 8px;
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.stages {
+  list-style: none;
+  max-width: 340px;
+  margin: 28px auto 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  border-radius: var(--radius-xs);
+  color: var(--text-3);
+  font-size: 13px;
+  transition:
+    color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+.stage.is-done {
+  color: var(--text-2);
+}
+.stage.is-now {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.stage-dot {
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  color: var(--bg);
+  transition:
+    background 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.stage.is-done .stage-dot {
+  background: var(--ok);
+  border-color: var(--ok);
+}
+.stage.is-now .stage-dot {
+  border-color: var(--accent-hi);
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ------------------------------- result bar ----------------------------- */
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: rise 0.4s var(--ease) both;
+}
+
+.result-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+}
+
+.result-id {
+  min-width: 0;
+  flex: 1;
+}
+.result-id h2 {
+  font-size: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.result-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.result-meta .sep {
+  opacity: 0.45;
+}
+
+.result-tally {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+.tally-marks {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.tally-marks span {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-3);
+  margin-left: 2px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 16px;
+  align-items: start;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: calc(var(--topbar-h) + 22px);
+  max-height: calc(100vh - var(--topbar-h) - 44px);
+  overflow: auto;
+  padding-right: 2px;
+}
+
+/* --------------------------------- paper -------------------------------- */
+
+.paper-shell {
+  padding: 14px;
+  overflow: hidden;
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: auto;
+  max-height: calc(100vh - var(--topbar-h) - 150px);
+  padding: 2px;
+}
+
+.paper-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 46px 16px;
+  color: var(--text-3);
+  font-size: 13px;
+}
+.paper-status.is-error {
+  color: var(--err);
+}
+
+.page {
+  position: relative;
+  /* Centres the page, but collapses to 0 when it is wider than the scroll port,
+     so the left edge stays scrollable instead of being clipped away. */
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 18px 40px -20px rgba(0, 0, 0, 0.95);
+}
+.page-canvas {
+  display: block;
+  border-radius: 3px;
+}
+
+.annotation {
+  position: absolute;
+  cursor: grab;
+  touch-action: none;
+  transition: box-shadow 0.14s var(--ease);
+}
+.annotation.style-box {
+  border: 1.5px solid var(--err);
+  border-radius: 2px;
+}
+.annotation.style-underline {
+  border-bottom: 2px solid var(--err);
+}
+.annotation.style-strikethrough::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 2px solid var(--err);
+}
+.annotation.style-note {
+  border: 1px dashed var(--warn);
+  background: rgba(255, 247, 232, 0.94);
+  border-radius: 3px;
+  padding: 3px 4px;
+  overflow: hidden;
+}
+.annotation.severity-warning {
+  border-color: var(--warn);
+}
+.annotation.severity-info {
+  border-color: var(--accent);
+}
+.annotation:hover {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.24);
+}
+.annotation.selected {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.2);
+}
+.annotation.unanchored {
+  border-style: dashed;
+}
+.note-text {
+  font-size: 9px;
+  line-height: 1.25;
+  display: block;
+  color: #171b22;
+}
+.annotation .marks {
+  position: absolute;
+  top: -9px;
+  right: -6px;
+  background: #d64c45;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.annotation .handle {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 11px;
+  height: 11px;
+  background: var(--accent);
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  cursor: nwse-resize;
+}
+.paper.dragging .annotation {
+  cursor: grabbing;
+}
+
+/* ------------------------------ responsive ------------------------------ */
+
+@media (max-width: 1320px) {
+  .result-grid {
+    grid-template-columns: minmax(0, 1fr) 370px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .result-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .paper {
+    max-height: 78vh;
+  }
+}
+
+@media (max-width: 860px) {
+  .onboard-features {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .onboard {
+    padding: 38px 20px 34px;
+  }
+  .onboard h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .result-bar {
+    padding: 13px 14px;
+  }
+  .paper-shell {
+    padding: 10px;
+  }
+  .grading {
+    padding: 34px 18px 32px;
+  }
+}

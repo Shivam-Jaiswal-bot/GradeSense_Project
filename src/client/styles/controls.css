@@ -1,0 +1,231 @@
+/**
+ * Control primitives: buttons, inputs, pills and the error alert.
+ * Everything here is theme-token driven so a component never hard-codes a colour.
+ */
+
+/* -------------------------------- controls ------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--line-2);
+  background: var(--surface-3);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background 0.16s var(--ease),
+    border-color 0.16s var(--ease),
+    transform 0.1s var(--ease),
+    filter 0.16s var(--ease);
+}
+.btn:hover:not(:disabled) {
+  background: #212632;
+  border-color: #3a3f4c;
+}
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: #4f53e2;
+  background: linear-gradient(180deg, #7376f6, #5457e8);
+  color: #fff;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 22px -12px rgba(99, 102, 241, 1);
+}
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.09);
+  background: linear-gradient(180deg, #7376f6, #5457e8);
+  border-color: #6265ef;
+}
+.btn-primary:disabled {
+  background: var(--surface-3);
+  border-color: var(--line-2);
+  color: var(--text-3);
+  box-shadow: none;
+  opacity: 1;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line-2);
+  color: var(--text-2);
+}
+.btn-ghost:hover:not(:disabled) {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.btn-danger {
+  background: transparent;
+  border-color: rgba(229, 114, 107, 0.42);
+  color: var(--err);
+}
+.btn-danger:hover:not(:disabled) {
+  background: var(--err-soft);
+  border-color: rgba(229, 114, 107, 0.7);
+}
+
+.btn-block {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 13.5px;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-3);
+  transition:
+    color 0.14s var(--ease),
+    background 0.14s var(--ease),
+    border-color 0.14s var(--ease);
+}
+.icon-btn:hover {
+  color: var(--text);
+  background: var(--surface-3);
+  border-color: var(--line-2);
+}
+.icon-btn.danger:hover {
+  color: var(--err);
+  background: var(--err-soft);
+  border-color: rgba(229, 114, 107, 0.4);
+}
+
+.text-input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-xs);
+  background: #0d0f14;
+  color: var(--text);
+  font-size: 13px;
+  transition:
+    border-color 0.16s var(--ease),
+    box-shadow 0.16s var(--ease);
+}
+.text-input::placeholder,
+.textarea::placeholder {
+  color: #5f6573;
+}
+.text-input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.select {
+  appearance: none;
+  padding-right: 30px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-3) 50%),
+    linear-gradient(135deg, var(--text-3) 50%, transparent 50%);
+  background-position:
+    right 14px top 55%,
+    right 9px top 55%;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+/* --------------------------------- pills -------------------------------- */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: var(--surface-3);
+  color: var(--text-2);
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.pill.tone-ok {
+  color: var(--ok);
+  background: var(--ok-soft);
+  border-color: rgba(53, 196, 143, 0.32);
+}
+.pill.tone-warn {
+  color: var(--warn);
+  background: var(--warn-soft);
+  border-color: rgba(217, 158, 74, 0.34);
+}
+.pill.tone-err {
+  color: var(--err);
+  background: var(--err-soft);
+  border-color: rgba(229, 114, 107, 0.34);
+}
+.pill.tone-accent {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+/* --------------------------------- alert -------------------------------- */
+
+.alert-wrap {
+  width: 100%;
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 18px 24px 0;
+}
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(229, 114, 107, 0.4);
+  background: var(--err-soft);
+  color: #f6b7b2;
+  font-size: 13px;
+  animation: rise 0.28s var(--ease) both;
+}
+.alert svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--err);
+}
+.alert .alert-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

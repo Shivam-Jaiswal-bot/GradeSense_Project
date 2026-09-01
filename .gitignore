@@ -5,3 +5,12 @@
 .claude-flow/data/
 .claude-flow/logs/
 .claude-flow/sessions/
+
+# GradeSense
+node_modules/
+dist/
+uploads/
+*.local
+data/
+*.db-shm
+*.db-wal

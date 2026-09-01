@@ -1,0 +1,343 @@
+/**
+ * The grading-session sidebar: upload drop zones and recent sessions.
+ */
+
+/* ------------------------------- upload card ---------------------------- */
+
+.upload-body {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.drop-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.req {
+  margin-left: auto;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.req.is-required {
+  color: var(--accent-hi);
+}
+
+.field-hint {
+  margin-top: -3px;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--err);
+  font-size: 12px;
+}
+
+/* --------------------------------- dropzone ----------------------------- */
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  min-height: 58px;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.014);
+  cursor: pointer;
+  transition:
+    border-color 0.18s var(--ease),
+    background 0.18s var(--ease),
+    transform 0.18s var(--ease);
+}
+.dropzone:hover {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+}
+.dropzone .dz-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: var(--text-2);
+  background: var(--surface-3);
+  border: 1px solid var(--line-2);
+  transition:
+    color 0.18s var(--ease),
+    background 0.18s var(--ease),
+    border-color 0.18s var(--ease);
+}
+.dropzone:hover .dz-icon {
+  color: var(--accent-hi);
+  border-color: var(--accent-line);
+}
+.dz-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.dz-main {
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.dz-main b {
+  color: var(--text);
+  font-weight: 600;
+}
+.dz-sub {
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.03em;
+}
+
+.drop-field.is-over .dropzone {
+  border-color: var(--accent-hi);
+  border-style: solid;
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+.drop-field.is-over .dz-icon {
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+
+.dropzone.is-focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.drop-field.is-disabled .dropzone {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* -------------------------------- file chip ----------------------------- */
+
+.file-chip {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 10px 10px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-3);
+  animation: rise 0.24s var(--ease) both;
+}
+
+.file-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 7px;
+  color: var(--accent-hi);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.file-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+.file-name {
+  font-size: 12.5px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file-sub {
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+}
+
+.file-actions {
+  display: flex;
+  gap: 2px;
+  flex: none;
+}
+
+/* -------------------------------- CTA / foot ---------------------------- */
+
+.upload-foot {
+  padding: 14px 18px 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-note {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+.upload-note.is-ready {
+  color: var(--ok);
+}
+
+.progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.progress-bar {
+  position: relative;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi));
+  transition: width 0.6s var(--ease);
+}
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: sheen 1.5s linear infinite;
+}
+
+/* -------------------------------- sessions ------------------------------ */
+
+.sessions-body {
+  padding: 12px;
+}
+
+.sessions-empty {
+  padding: 18px 10px 20px;
+  text-align: center;
+}
+.sessions-empty .se-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10px;
+  border-radius: 10px;
+  color: var(--text-3);
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+}
+.sessions-empty strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+.sessions-empty p {
+  margin-top: 5px;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.session-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.session {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 3px 10px;
+  padding: 10px 10px 10px 12px;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition:
+    background 0.15s var(--ease),
+    border-color 0.15s var(--ease);
+}
+.session:hover {
+  background: var(--surface-3);
+  border-color: var(--line);
+}
+.session:hover .session-go {
+  color: var(--text-2);
+  transform: translateX(2px);
+}
+.session.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+
+.session-name {
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.session-score {
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.session-score span {
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+.session-go {
+  color: var(--text-3);
+  opacity: 0.7;
+  transition:
+    transform 0.15s var(--ease),
+    color 0.15s var(--ease);
+}
+
+.session-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  color: var(--text-3);
+  font-size: 11px;
+}
+.session-meta .sep {
+  opacity: 0.45;
+}
+.session-flag {
+  color: var(--warn);
+  font-weight: 500;
+}
